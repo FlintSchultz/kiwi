@@ -12,7 +12,11 @@ dependencies:
   build_config: ^1.0.0
   code_builder: ^4.1.0
   dart_style: ^2.2.1
-  kiwi: ^4.0.1
+  kiwi:
+    git:
+      url: https://github.com/FlintSchultz/kiwi
+      ref: master
+      path: kiwi
   path: ^1.8.0
   source_gen: ^1.2.1
   built_collection: ^5.1.1
