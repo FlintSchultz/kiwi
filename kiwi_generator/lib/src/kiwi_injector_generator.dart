@@ -2,15 +2,14 @@ import 'package:analyzer/dart/constant/value.dart';
 import 'package:analyzer/dart/element/element.dart';
 import 'package:analyzer/dart/element/type.dart';
 import 'package:build/build.dart';
-import 'package:code_builder/code_builder.dart';
-import 'package:built_collection/built_collection.dart';
 import 'package:build/src/builder/build_step.dart';
+import 'package:built_collection/built_collection.dart';
+import 'package:code_builder/code_builder.dart';
+import 'package:dart_style/dart_style.dart';
+import 'package:kiwi/kiwi.dart';
 import 'package:kiwi_generator/src/model/kiwi_generator_error.dart';
 import 'package:kiwi_generator/src/util/list_extensions.dart';
 import 'package:source_gen/source_gen.dart';
-import 'package:dart_style/dart_style.dart';
-
-import 'package:kiwi/kiwi.dart';
 
 const TypeChecker _registerTypeChecker = TypeChecker.fromRuntime(Register);
 
@@ -168,7 +167,7 @@ class KiwiInjectorGenerator extends Generator {
         constructorName == null ? '' : '.$constructorName';
 
     final ClassElement? clazz =
-        concreteType.element?.library?.getType(className);
+        concreteType.element2?.library?.getClass(className);
     if (clazz == null) {
       throw KiwiGeneratorError('$className not found');
     }
